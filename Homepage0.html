@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MIRACLE AI</title>
+<style>
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 3em;
+  margin-bottom: 0;
+}
+
+.content {
+  margin-top: 20px;
+}
+
+.content p {
+  margin-bottom: 10px;
+}
+
+.cta {
+  text-align: center;
+}
+
+.cta a {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.cta .countdown {
+  margin-top: 10px;
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>MIRACLE AI</h1>
+  </div>
+  <div class="content">
+
+  </div>
+  <div class="cta">
+
+    <div class="countdown">
+      <h2>Launching Soon</h2>
+      <p>
+        <span id="days"></span> days
+        <span id="hours"></span> hours
+        <span id="minutes"></span> minutes
+        <span id="seconds"></span> seconds
+      </p>
+    </div>
+  </div>
+</div>
+<script>
+var days = 3;
+var hours = 23;
+var minutes = 59;
+var seconds = 59;
+
+setInterval(function() {
+  seconds--;
+  if (seconds < 0) {
+    minutes--;
+    seconds = 59;
+  }
+  if (minutes < 0) {
+    hours--;
+    minutes = 59;
+  }
+  if (hours < 0) {
+    days--;
+    hours = 23;
+  }
+
+  document.getElementById("days").innerHTML = days;
+  document.getElementById("hours").innerHTML = hours;
+  document.getElementById("minutes").innerHTML = minutes;
+  document.getElementById("seconds").innerHTML = seconds;
+}, 1000);
+</script>
+</body>
+</html>
